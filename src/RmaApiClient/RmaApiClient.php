@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Clients\RmaApiClient;
+namespace RmaApiClient;
 
-use App\Entities\Customer;
-use App\Entities\CustomerType;
+use RmaApiClient\Entities\Customer;
+use RmaApiClient\Entities\CustomerType;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
@@ -13,8 +13,8 @@ class RmaApiClient
 
     public Client $client;
 
-    public function __construct() {
-        $url = self::BASE_URL . '/' . $_ENV['RMA_CLIENT'] . '/';
+    public function __construct($rmaClient, $rmaApiKey) {
+        $url = self::BASE_URL . '/' . $rmaClient . '/';
 
         $this->client = new Client([
             // Base URI is used with relative requests
@@ -25,7 +25,7 @@ class RmaApiClient
                 'Accept' => 'application/json'
             ],
             'query' => [
-                'api_key' => $_ENV['RMA_API_KEY']
+                'api_key' => $rmaApiKey
             ]
         ]);
     }
@@ -50,15 +50,22 @@ class RmaApiClient
 
         $customers = [];
         foreach ($data['customer'] as $customer) {
+            $customerType = CustomerType::Person;
+            if($customer['typeofcontact'] == "company") {
+                $customerType = CustomerType::Company;
+            }
+
             $customers[] = new Customer(
+                (int) $customer['id'],
                 $customer['customernumber'],
+                $customerType,
                 $customer['name'],
                 $customer['address1'],
                 $customer['zipcode'],
                 $customer['city'],
                 $customer['country'],
                 $customer['phone'],
-                $customer
+                $customer['email']
             );
         }
 

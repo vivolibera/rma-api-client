@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Clients\RmaApiClient;
+namespace RmaApiClient;
 
 class RmaApiClientException extends \Exception
 {
