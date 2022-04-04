@@ -1,0 +1,23 @@
+{
+    "name": "vivolibera/rma-api-client",
+    "authors": [
+        {
+            "name": "Simon Erhardt",
+            "email": "simon@simon-erhardt.com",
+            "homepage": "https://www.vivolibera.com",
+            "role": "Developer"
+        }
+    ],
+    "license": [
+       "LGPL-2.1-only",
+       "GPL-3.0-or-later"
+    ],
+    "autoload": {
+        "psr-4": {
+            "RmaApiClient\\": "src/RmaApiClient"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.4"
+    }
+}
