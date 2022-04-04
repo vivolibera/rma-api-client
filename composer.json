@@ -1,5 +1,6 @@
 {
     "name": "vivolibera/rma-api-client",
+    "description": "An api client for run my accounts",
     "authors": [
         {
             "name": "Simon Erhardt",
