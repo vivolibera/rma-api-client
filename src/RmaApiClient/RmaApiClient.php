@@ -66,6 +66,7 @@ class RmaApiClient
                 $customer['city'],
                 $customer['country'],
                 $customer['phone'],
+                $customer['mobile'],
                 $customer['email']
             );
         }

@@ -14,6 +14,7 @@ class Customer
     private string $city;
     private string $country;
     private ?string $phone;
+    private ?string $mobile;
     private ?string $email;
 
     public function __construct(
@@ -27,6 +28,7 @@ class Customer
         $city,
         $country,
         $phone,
+        $mobile,
         $email,
     ) {
         $this->id = $id;
@@ -39,6 +41,7 @@ class Customer
         $this->city = $city;
         $this->country = $country;
         $this->phone = $phone;
+        $this->mobile = $mobile;
         $this->email = $email;
     }
 
@@ -120,6 +123,14 @@ class Customer
     public function getPhone(): ?string
     {
         return $this->phone;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getMobile(): ?string
+    {
+        return $this->mobile;
     }
 
     /**
