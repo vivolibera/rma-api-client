@@ -8,6 +8,8 @@ class Customer
     private ?string $customerNumber;
     private CustomerType $type;
     private string $name;
+    private ?string $firstName;
+    private ?string $lastName;
     private string $address1;
     private ?string $address2;
     private string $zipCode;
@@ -22,6 +24,8 @@ class Customer
         $customerNumber,
         $type,
         $name,
+        $firstName,
+        $lastName,
         $address1,
         $address2,
         $zipCode,
@@ -35,6 +39,8 @@ class Customer
         $this->customerNumber = $customerNumber;
         $this->type = $type;
         $this->name = $name;
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
         $this->address1 = $address1;
         $this->address2 = $address2;
         $this->zipCode = $zipCode;
@@ -75,6 +81,22 @@ class Customer
     public function getName(): string
     {
         return $this->name;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
     }
 
     /**
