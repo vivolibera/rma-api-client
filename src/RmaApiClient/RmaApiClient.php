@@ -61,6 +61,7 @@ class RmaApiClient
                 $customerType,
                 $customer['name'],
                 $customer['address1'],
+                $customer['address2'],
                 $customer['zipcode'],
                 $customer['city'],
                 $customer['country'],

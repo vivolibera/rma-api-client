@@ -5,10 +5,11 @@ namespace RmaApiClient\Entities;
 class Customer
 {
     private int $id;
-    private string $customernumber;
+    private string $customerNumber;
     private CustomerType $type;
     private string $name;
-    private string $address;
+    private string $address1;
+    private string $address2;
     private string $zipCode;
     private string $city;
     private string $country;
@@ -17,10 +18,11 @@ class Customer
 
     public function __construct(
         $id,
-        $customernumber,
+        $customerNumber,
         $type,
         $name,
-        $address,
+        $address1,
+        $address2,
         $zipCode,
         $city,
         $country,
@@ -28,10 +30,11 @@ class Customer
         $email,
     ) {
         $this->id = $id;
-        $this->customernumber = $customernumber;
+        $this->customerNumber = $customerNumber;
         $this->type = $type;
         $this->name = $name;
-        $this->address = $address;
+        $this->address1 = $address1;
+        $this->address2 = $address2;
         $this->zipCode = $zipCode;
         $this->city = $city;
         $this->country = $country;
@@ -50,9 +53,9 @@ class Customer
     /**
      * @return string
      */
-    public function getCustomernumber(): string
+    public function getCustomerNumber(): string
     {
-        return $this->customernumber;
+        return $this->customerNumber;
     }
 
     /**
@@ -74,9 +77,17 @@ class Customer
     /**
      * @return string
      */
-    public function getAddress(): string
+    public function getAddress1(): string
     {
-        return $this->address;
+        return $this->address1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress2(): string
+    {
+        return $this->address2;
     }
 
     /**
