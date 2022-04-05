@@ -4,17 +4,17 @@ namespace RmaApiClient\Entities;
 
 class Customer
 {
-    private int $id;
-    private string $customerNumber;
+    private ?int $id;
+    private ?string $customerNumber;
     private CustomerType $type;
     private string $name;
     private string $address1;
-    private string $address2;
+    private ?string $address2;
     private string $zipCode;
     private string $city;
     private string $country;
-    private string $phone;
-    private string $email;
+    private ?string $phone;
+    private ?string $email;
 
     public function __construct(
         $id,
@@ -43,17 +43,17 @@ class Customer
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCustomerNumber(): string
+    public function getCustomerNumber(): ?string
     {
         return $this->customerNumber;
     }
@@ -83,9 +83,9 @@ class Customer
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getAddress2(): string
+    public function getAddress2(): ?string
     {
         return $this->address2;
     }
@@ -115,17 +115,17 @@ class Customer
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPhone(): string
+    public function getPhone(): ?string
     {
         return $this->phone;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
